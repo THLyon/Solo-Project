@@ -1,17 +1,28 @@
 const fs = require('fs/promises'); 
 const path = require('path'); 
 
-const api = 'https://api.sportsdata.io/golf/v2/json/Leaderboard/{tournamentid}'; 
-const apiKey = '74708e84c6d243bc832af07d61be8d8d'; 
+
+const tournamentIdApi = 'https://api.sportsdata.io/golf/v2/json/Tournaments';
+const tournamentApiKey = '74708e84c6d243bc832af07d61be8d8d';
 
 //error handler?
 
-const fileController = {}; 
+//middleware fetching tournament id based on date; 
+    //pass in tournament id based on date
 
+const tournamentController = {}; 
 
-fileController.getTournament = (req, res, next) => {
-   const newData = req.params.id;
-   fetch(`https://api.sportsdata.io/golf/v2/json/Leaderboard/${tournamentid}`)
+const createErr = (errInfo) => {
+    const { method, type, err } = errInfo; 
+    return {
+        log: `tournamentController.${getTournament}: ${type} ERROR: ${typeof err === 'object' ? JSON.stringify(err) : err}`, 
+        message: { err: `tournamentController.${getTournament}. ERROR: check console log for more details`}
+    }
+}
+
+tournamentController.getTournament = (req, res, next) => {
+   const tournamentData = req.params.tournamentData;
+   fetch(`https://api.sportsdata.io/golf/v2/json/Tournaments`)
    .then((data) => data.json())
    .then((data) => {
        res.locals.tournaments = data; 
@@ -26,3 +37,4 @@ fileController.getTournament = (req, res, next) => {
 
 //potential add player file controller here
 
+module.exports = tournamentController; 
