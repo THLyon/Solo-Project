@@ -1,6 +1,6 @@
 import React, { Component } from 'react'; 
 import app from '../server/server.js';
-import Leaderboard from './Leaderboard.jsx'; 
+import Leaderboard from './Components/Leaderboard.jsx'; 
 
 class App extends Component {
     constructor(props){
@@ -16,19 +16,6 @@ class App extends Component {
                 players: []  
             }
         }
-        // this.state = {
-        //     //tournaments[players[0]]
-        //     //tournaments[players[1]]
-        //     //tournaments[players[2]]
-        //     //tournaments[players[3]]
-        //     //tournaments[players[4]]
-        //     //tournaments[players[5]]
-        //     //tournaments[players[6]]
-        //     //tournaments[players[7]]
-        //     //tournaments[players[8]]
-        //     //tournaments[players[9]]
-        //     //tournaments[players[10]], 
-        // }
     }
 
     componentDidMount(){

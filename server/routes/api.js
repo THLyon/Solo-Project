@@ -10,7 +10,7 @@ const router = express.Router();
 
 router.get('/', leaderboardController.getLeaderboard, (req, res) => {
     console.log(res.locals)
-    res.statusCode(200).json(res.locals);  //.tournamentData
+    res.status(200).json(res.locals);  //.tournamentData
 });
 
 
