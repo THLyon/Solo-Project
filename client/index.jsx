@@ -1,10 +1,14 @@
 import React, {Component} from 'react'; 
 import { render } from 'react-dom'; 
-import App from './App.jsx'; 
+//add react router to all pages so clicks link directly via <route/>
+import { BrowserRouter}  from 'react-router-dom'
+import App from './App'; 
 
 render (
-      <App />,
-    document.getElementById('root') 
-)   
+    <BrowserRouter>
+      <App/>
+    </BrowserRouter>,
+      document.getElementById('root') 
+)
 
 // render(<Index />, document.querySelector("#root"));

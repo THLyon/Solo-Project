@@ -6,13 +6,13 @@ const { builtinModules } = require('module');
 
 module.exports = {
     mode: 'development', 
-    entry: './client/index.js', 
+    entry: './client/index.jsx', 
     output: {
         path: path.resolve(__dirname, 'build'), 
         filename: 'bundle.js', 
     },
     target: 'node',
-    // resolve: {extensions: ['.jsx', '.js', '.json']}, 
+    //resolve: {extensions: ['.jsx', '.js', '.json']}, 
     //loaders
     
     module: {

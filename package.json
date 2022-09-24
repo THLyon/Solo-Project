@@ -4,10 +4,10 @@
   "description": "PGA Tour Scoreboard chrome Extension",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1", 
-    "start": "nodemon server/server.js", 
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/server.js",
     "build": "webpack -w"
-  },  
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/THLyon/Solo-Project.git"
@@ -27,6 +27,8 @@
     "nodemon": "^2.0.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router": "^6.4.1",
+    "react-router-dom": "^6.4.1",
     "webpack": "^5.73.0",
     "webpack-build": "^1.0.1",
     "webpack-cli": "^4.10.0"

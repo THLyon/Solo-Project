@@ -2,7 +2,7 @@ const fs = require('fs/promises');
 const path = require('path'); 
 
 
-const tournamentIdApi = 'https://api.sportsdata.io/golf/v2/json/Tournaments';
+const tournamentIdApi = 'https://api.sportsdata.io/golf/v2/json/CurrentSeason';
 const tournamentApiKey = '74708e84c6d243bc832af07d61be8d8d';
 
 //error handler?
@@ -20,11 +20,16 @@ const createErr = (errInfo) => {
     }
 }
 
+
+
 tournamentController.getTournament = (req, res, next) => {
-   const tournamentData = req.params.tournamentData;
-   fetch(`https://api.sportsdata.io/golf/v2/json/Tournaments`)
+//    const tournamentData = req.params.tournamentData;
+   fetch(tournamentIdApi)
    .then((data) => data.json())
    .then((data) => {
+    //  if(data.date === new Date.now()){
+    //     res.locals.tournaments = data.date; 
+    //  }
        res.locals.tournaments = data; 
        return next(); 
    })
