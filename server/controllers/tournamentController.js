@@ -1,59 +1,11 @@
 const fs = require('fs/promises'); 
 const path = require('path'); 
-
+const dateFunctionController = require('./dateFunctionController.js');
 
 
 let seasonId;
 
 let tournamentId;
-
-function currentDate(date) {
-    let d = new Date(date),
-        month = '' + (d.getMonth() + 1),
-        day = '' + d.getDate(),
-        year = d.getFullYear();
-
-    if (month.length < 2) month = '0' + month;
-    if (day.length < 2) day = '0' + day;
-
-    return [year, month, day].join('-');
-};
-
-function datePlusOne(date) {
-    let d = new Date(date),
-        month = '' + (d.getMonth() + 1),
-        day = '' + (d.getDate() + 1),
-        year = d.getFullYear();
-
-    if (month.length < 2) month = '0' + month;
-    if (day.length < 2) day = '0' + day;
-
-    return [year, month, day].join('-');
-};
-
-function datePlusTwo(date) {
-    let d = new Date(date),
-        month = '' + (d.getMonth() + 1),
-        day = '' + (d.getDate() + 2),
-        year = d.getFullYear();
-
-    if (month.length < 2) month = '0' + month;
-    if (day.length < 2) day = '0' + day;
-
-    return [year, month, day].join('-');
-};
-
-function datePlusThree(date) {
-    let d = new Date(date),
-        month = '' + (d.getMonth() + 1),
-        day = '' + (d.getDate() + 3),
-        year = d.getFullYear();
-
-    if (month.length < 2) month = '0' + month;
-    if (day.length < 2) day = '0' + day;
-
-    return [year, month, day].join('-');
-}; 
 
 //output is a string 
 //if string.length - 2 + string.length - 1 is >= startdate.length -2 + startDate.length - 1 &&  string.length - 2 + string.length - 1 is <= endDate.length -2 + enddate.length - 1
