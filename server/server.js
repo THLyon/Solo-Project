@@ -13,18 +13,15 @@ app.use(express.json());
 
 const apiRouter = require('./routes/api'); 
 // const playerRouter = require('.routes/player'); 
-const tournamentRouter = require('./routes/tournament'); 
+// const tournamentRouter = require('./routes/tournament'); 
 
 app.use('/build' ,express.static(path.join(__dirname, '../build')))
 
-// app.use('/styles', (req,res) =>{
-//     return res.status(200).static(path.join(__dirname, '../client/Styling/styles.css'))
-// })
 
 //route handlers
 app.use('/api', apiRouter);
 // app.use('/playerRouter', playerRouter); 
-app.use('/tournamentRouter', tournamentRouter); 
+// app.use('/tournamentRouter', tournamentRouter); 
 
 
 app.get('/', (req, res) => {
