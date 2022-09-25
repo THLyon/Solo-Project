@@ -1,14 +1,19 @@
-import React, {Component} from 'react'; 
+import React from 'react'; 
 import { render } from 'react-dom'; 
-//add react router to all pages so clicks link directly via <route/>
-import { BrowserRouter}  from 'react-router-dom'
+// import { BrowserRouter}  from 'react-router-dom'
+import { createRoot } from 'react-dom/client'
 import App from './App'; 
 
-render (
-    <BrowserRouter>
-      <App/>
-    </BrowserRouter>,
-      document.getElementById('root') 
-)
+const el = document.getElementById('root')
+const root = createRoot(el)
 
-// render(<Index />, document.querySelector("#root"));
+root.render(<App/>)
+
+// render (
+//     <BrowserRouter>
+//       <App/>
+//     </BrowserRouter>,
+//       document.getElementById('root') 
+// )
+
+// ReactDOM.render(<App />, document.querySelector('root'));

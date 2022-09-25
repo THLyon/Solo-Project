@@ -31,12 +31,16 @@ tournamentController.getTournament = (req, res, next) => {
     //     res.locals.tournaments = data.date; 
     //  }
        res.locals.tournaments = data; 
+       console.log(res.locals.tournaments)
        return next(); 
    })
    .catch(err => next(createErr({
-       method: 'getTournament', 
-       type: 'when reading file', 
-       err: err, 
+    //    method: 'getTournament', 
+    //    type: 'when reading file', 
+    //    err: err, 
+          log: 'getTournament middleware Error', 
+          status: 400,
+          message: {err: 'error in getTournament middlware'}
    })));
 }
 
