@@ -1,5 +1,5 @@
-const express = require('express')
 const path = require('path');
+const express = require('express');
 
 const app = express();
 const PORT = 3000; 
@@ -13,18 +13,20 @@ app.use(express.json());
 
 const apiRouter = require('./routes/api'); 
 // const playerRouter = require('.routes/player'); 
-const tournamentRouter = require('./routes/tournament'); 
+// const tournamentRouter = require('./routes/tournament'); 
 
-//app.use('/build' ,express.static(path.join(__dirname, '../build')))
+app.use('/build' ,express.static(path.join(__dirname, '../build')))
 
-app.get("/", (req, res) => {
-    return res.status(200).sendFile(path.join(__dirname, '../index.html'));
-});
 
 //route handlers
 app.use('/api', apiRouter);
 // app.use('/playerRouter', playerRouter); 
-app.use('/tournamentRouter', tournamentRouter); 
+// app.use('/tournamentRouter', tournamentRouter); 
+
+
+app.get('/', (req, res) => {
+    return res.status(200).sendFile(path.join(__dirname, '../client/index.html'));
+});
 
 //Local error handler
 app.use((req, res) => res.status(404)); 

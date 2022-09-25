@@ -8,10 +8,14 @@ const router = express.Router();
 
 //access leaderboard data here; 
 
-router.get('/', tournamentController.getTournament, (req, res) => {
+router.get('/', tournamentController.getSeason, tournamentController.getTournament, tournamentController.getLeaderboard, (req, res) => {
     console.log(res.locals)
-    res.status(200).json(res.locals);  //.tournamentData
+    res.status(200).send(res.locals);  //.tournamentData
 });
+
+router.get('/tournament', tournamentController.getTournament, (req, res) => {
+    return res.status(200).send(res.locals); 
+})
 
 
 module.exports= router; 
